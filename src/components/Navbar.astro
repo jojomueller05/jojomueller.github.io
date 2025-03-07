@@ -1,0 +1,69 @@
+---
+// Logo <> About, Portfolio, Contact <> Search...
+// BG: Base
+// Logo:
+//  Entweder: RoseWater(#f5e0dc), Teal(#94e2d5), Mauve(#cba6f7)
+
+// Favicon: 48x48
+// logo navbar 40px mal 150px font: Lily Script One
+---
+
+<div class="w-full" x-data="{ open : false }">
+    <nav class="flex items-center justify-between p-6 md:p-10 bg-mocha-base">
+        <a href="/">
+            <h1 class="text-mocha-green text-4xl font-lily-script">
+                J.J. Müller
+            </h1>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="block lg:hidden text-mocha-text text-3xl focus:outline-none"
+            @click="open = !open"
+        >
+            <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <ul
+            id="menu"
+            class="hidden lg:flex text-mocha-text text-xl space-x-6 lg:space-x-10"
+        >
+            <li><a href="#about" class="hover:text-mocha-sky hover:font-bold">About</a></li>
+            <li>
+                <a href="#skills" class="hover:text-mocha-red hover:font-bold"
+                    >Skills</a>
+            </li>
+            <li>
+                <a href="#experinece" class="hover:text-mocha-peach hover:font-bold">Experience</a>
+            </li>
+        </ul>
+
+        <!-- Search Box -->
+        <div class="relative hidden lg:block">
+            <input
+                class="pr-10 pl-4 py-2 bg-mocha-surface1 rounded-lg text-mocha-text outline-none"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search"
+            />
+            <button class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                <i class="bi bi-search text-mocha-text text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <ul
+        class="hidden flex flex-col items-center bg-mocha-base w-full py-4 space-y-4 text-xl text-mocha-text lg:hidden"
+        :class="{ 'hidden' : !open }"
+    >
+        <li><a href="#About" class="hover:text-mocha-green">About</a></li>
+        <li>
+            <a href="#Portfolio" class="hover:text-mocha-green">Portfolio</a>
+        </li>
+        <li><a href="#Contact" class="hover:text-mocha-green">Contact</a></li>
+    </ul>
+</div>
+

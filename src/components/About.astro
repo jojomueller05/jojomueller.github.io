@@ -1,0 +1,58 @@
+---
+import {Image} from "astro:assets";
+import proudImage from '../assets/img/undraw_feeling-proud_tdos.svg';
+---
+<style>
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .animate-slide-in-left {
+      animation: slideInFromLeft 1s ease-out forwards; /* Slower animation (2 seconds) */
+    }
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .animate-slide-in-right {
+      animation: slideInFromRight 1s ease-out forwards; /* Slower animation (2 seconds) */
+    }
+  </style>
+
+<div class="h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left mx-5 md:mx-20">
+    <!-- Textbereich -->
+    <div class="md:w-1/2 mb-10 md:mb-0 animate-slide-in-left">
+        <h1 class="text-4xl my-5">
+            I'm <b class="text-mocha-blue text-6xl font-lily-script">Joël Julien Müller</b>
+        </h1>
+        <p class="text-2xl my-4">Junior Software Engineer</p>
+        <a href="https://www.linkedin.com/in/jo%C3%ABl-julien-m%C3%BCller-27029222b/" target="_blank" class="text-xl p-2 rounded border-2 border-mocha-maroon text-mocha-maroon cursor-pointer transform transition-transform duration-300 hover:translate-x-2 hover:bg-mocha-maroon hover:text-mocha-base">
+            Contact me
+        </a>
+    </div>
+
+    <!-- Bildbereich -->
+    <div class="md:w-1/2 flex justify-center animate-slide-in-right">
+        <Image src={proudImage} width={proudImage.width} height={proudImage.height} alt="Proud image" class="w-2/3 max-w-xs md:max-w-sm"/>
+    </div>
+</div>
+
+<div class="flex flex-col justify-center items-center h-screen" id="about">
+    <div class="max-w-2/3">
+        <h1 class="text-4xl font-bold my-5 text-mocha-sky">About</h1>
+        <p>
+            Hello! My name is Joël Julien Müller, and I am a Junior Software Engineer with a passion for 
+            building reliable and innovative applications. I started my journy as a IT apprentice at Lehner-Versand AG.
+            I've got experience in backend and web development and I'm interested in learning new programming languages and technologies.
+        </p>
+    </div>
+</div>
+
