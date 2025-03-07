@@ -7,7 +7,7 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jojomueller05.github.io',
-  base: 'jojomueller05.github.io',
+  base: 'portfolio',
   vite: {
       plugins: [tailwindcss()],
   },
